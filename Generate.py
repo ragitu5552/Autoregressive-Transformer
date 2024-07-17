@@ -142,6 +142,5 @@ class BigramLanguageModel(nn.Module):
 
 model = BigramLanguageModel()
 model.load_state_dict(torch.load('weights.pth'))
-
 context = torch.zeros((1, 1), dtype=torch.long, device=device)
 print(decode(model.generate(context, max_new_tokens=1000)[0].tolist()))
